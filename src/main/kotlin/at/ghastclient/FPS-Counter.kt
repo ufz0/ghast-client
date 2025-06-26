@@ -2,8 +2,7 @@ package at.ghastclient
 
 import net.minecraft.client.Minecraft
 
-class FPSCounter {
-
+object FPSCounter {
     fun getFPS(): Int {
         return Minecraft.getInstance().fps
     }

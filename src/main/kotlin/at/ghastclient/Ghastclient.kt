@@ -14,8 +14,10 @@ object Ghastclient : ModInitializer {
 		logger.info("Hello Fabric world!")
 		val client = Minecraft.getInstance()
 
-		while(client.isRunning){
-			logger.info(client.fpsString)
+		while(true){
+			if(client.isGameLoadFinished){
+				logger.info("${FPSCounter.getFPS()}")
+			}
 		}
 	}
 }
