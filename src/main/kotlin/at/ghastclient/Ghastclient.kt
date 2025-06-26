@@ -1,6 +1,7 @@
 package at.ghastclient
 
 import net.fabricmc.api.ModInitializer
+import net.minecraft.client.Minecraft
 import org.slf4j.LoggerFactory
 
 object Ghastclient : ModInitializer {
@@ -11,5 +12,10 @@ object Ghastclient : ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		logger.info("Hello Fabric world!")
+		val client = Minecraft.getInstance()
+
+		while(client.isRunning){
+			logger.info(client.fpsString)
+		}
 	}
 }
