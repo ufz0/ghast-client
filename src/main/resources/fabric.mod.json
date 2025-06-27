@@ -16,27 +16,27 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			{
-				"value": "at.ghastclient.Ghastclient",
-				"adapter": "kotlin"
-			}
+			"at.ghast.Ghastclient"
+		],
+		"client": [
+			"at.ghast.GhastclientClient"
 		],
 		"fabric-datagen": [
-			{
-				"value": "at.ghastclient.GhastclientDataGenerator",
-				"adapter": "kotlin"
-			}
+			"at.ghast.GhastclientDataGenerator"
 		]
 	},
 	"mixins": [
-		"ghast-client.mixins.json"
+		"ghast-client.mixins.json",
+		{
+			"config": "ghast-client.client.mixins.json",
+			"environment": "client"
+		}
 	],
 	"depends": {
 		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.21.6",
 		"java": ">=21",
-		"fabric-api": "*",
-		"fabric-language-kotlin": "*"
+		"fabric-api": "*"
 	},
 	"suggests": {
 		"another-mod": "*"
