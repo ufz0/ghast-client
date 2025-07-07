@@ -16,21 +16,14 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"at.ghast.Ghastclient"
-		],
-		"client": [
-			"at.ghast.GhastclientClient"
+			"at.ghasty.Ghastclient"
 		],
 		"fabric-datagen": [
-			"at.ghast.GhastclientDataGenerator"
+			"at.ghasty.GhastclientDataGenerator"
 		]
 	},
 	"mixins": [
-		"ghast-client.mixins.json",
-		{
-			"config": "ghast-client.client.mixins.json",
-			"environment": "client"
-		}
+		"ghast-client.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.14",

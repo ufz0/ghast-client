@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "at.ghast.mixin",
+	"package": "at.ghasty.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ExampleMixin"
