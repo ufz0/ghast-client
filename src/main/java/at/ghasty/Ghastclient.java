@@ -3,15 +3,16 @@ package at.ghasty;
 import at.ghasty.keybinds.keybinds;
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.text.Text;
+import net.minecraft.client.render.entity.PlayerEntityRenderer;
+import net.minecraft.entity.EntityType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Ghastclient implements ModInitializer {
 	public static final String MOD_ID = "ghast-client";
-
+	public static MinecraftClient client = MinecraftClient.getInstance();
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
@@ -24,17 +25,11 @@ public class Ghastclient implements ModInitializer {
 		// Proceed with mild caution.
 
 		// Register keybindings
-		MinecraftClient client = MinecraftClient.getInstance();
 		keybinds.init();
+		// Start tick events
+		tickEvents.init();
 
-		ClientTickEvents.START_CLIENT_TICK.register(minecraftClient -> {
-			while (keybinds.g.wasPressed()) {
-				LOGGER.info("hello-world-key pressed!");
-				if (client.player != null) {
-					client.player.sendMessage(Text.of("Hello World!"), true);
-				}
-			}
-		});
+
 
 		LOGGER.info("Hello Fabric world!");
 	}

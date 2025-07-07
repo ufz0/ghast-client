@@ -6,11 +6,11 @@ import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
 public class keybinds {
-    public static KeyBinding g;
+    public static KeyBinding openUI;
     public static final String CATEGORY = "Ghasty";
 
     public static void init() {
-        g = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+        openUI = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.ghasty.helloWorld",
                 InputUtil.Type.KEYSYM, // Type (KEYSYM = keyboard, MOUSE = mouse button)
                 GLFW.GLFW_KEY_G,
