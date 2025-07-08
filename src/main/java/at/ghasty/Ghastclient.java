@@ -31,6 +31,6 @@ public class Ghastclient implements ModInitializer {
 
 
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Ghasty initialized");
 	}
 }
