@@ -29,7 +29,7 @@ jobs:
         run: |
           fname=$(find build/libs -maxdepth 1 -type f -name "*.jar" \
             ! -name "*-sources.jar" ! -name "*-dev.jar" | head -n1)
-          echo "jarname=$(basename \"$fname\")" >> $GITHUB_OUTPUT
+          echo "jarname=$(basename $fname)" >> $GITHUB_OUTPUT
 
       - name: Upload to GitHub release
         uses: actions/upload-release-asset@v1
