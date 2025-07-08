@@ -2,14 +2,11 @@ package at.ghasty;
 
 import at.ghasty.keybinds.keybinds;
 import net.fabricmc.api.ModInitializer;
-
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.render.entity.PlayerEntityRenderer;
-import net.minecraft.entity.EntityType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import at.ghasty.screens.*;
 public class Ghastclient implements ModInitializer {
 	public static final String MOD_ID = "ghast-client";
 	public static MinecraftClient client = MinecraftClient.getInstance();

@@ -13,7 +13,7 @@ public class keybinds {
         openUI = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 "key.ghasty.helloWorld",
                 InputUtil.Type.KEYSYM, // Type (KEYSYM = keyboard, MOUSE = mouse button)
-                GLFW.GLFW_KEY_G,
+                GLFW.GLFW_KEY_RIGHT_SHIFT,
                 CATEGORY
         ));
     }
