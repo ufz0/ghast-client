@@ -41,6 +41,5 @@ public class TestScreen extends Screen {
         // Subtracting an extra 10 pixels will give the text some padding.
         // textRenderer, text, x, y, color, hasShadow
         context.drawText(this.textRenderer, "Ghasty Menu", this.width/2, (this.width / 100) * 10 - this.textRenderer.fontHeight - 10, 0xFFFFFFFF, true);
-        Ghastclient.LOGGER.info("Rendering info text at: " + this.width/2 + ", " + (this.width / 100) * 10);
     }
 }
