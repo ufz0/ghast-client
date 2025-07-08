@@ -1,15 +1,21 @@
 package at.ghasty;
 
 import at.ghasty.keybinds.keybinds;
+import at.ghasty.notifications.ToastNotification;
 import at.ghasty.screens.modMenuScreen;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.toast.SystemToast;
+import net.minecraft.client.toast.Toast;
 import net.minecraft.text.Text;
 
 import static at.ghasty.globals.showFPS;
 
 public class tickEvents {
+    public static boolean shownInfo = false;
+
     public static void init(){
+
         ClientTickEvents.START_CLIENT_TICK.register(minecraftClient -> {
 
             if (showFPS && Ghastclient.client.player != null){
@@ -22,12 +28,16 @@ public class tickEvents {
                 Ghastclient.LOGGER.info("Opened UI!");
                 if (Ghastclient.client.player != null) {
                     //Ghastclient.client.player.sendMessage(Text.of("Hello World!"), true);
+                    ToastNotification.createInfo("WIP", "Work in progress, nothing is finished ");
                     Ghastclient.client.setScreen(
                             new modMenuScreen(Text.empty())
                     );
                 }
             }
-
+            if (!shownInfo && Ghastclient.client.isFinishedLoading() && Ghastclient.client.player != null){
+                ToastNotification.createInfo("WIP", "Everything you see here is work in progress");
+                shownInfo = true;
+            }
         });
     }
 }

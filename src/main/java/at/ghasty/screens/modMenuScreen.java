@@ -1,6 +1,8 @@
 package at.ghasty.screens;
 
+import at.ghasty.Ghastclient;
 import at.ghasty.globals;
+import at.ghasty.notifications.ToastNotification;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
@@ -19,9 +21,7 @@ public class modMenuScreen extends Screen {
     protected void init() {
 
         ButtonWidget helloWorldButton = ButtonWidget.builder(Text.of("Test Notification"), (btn) -> {
-            this.client.getToastManager().add(
-                    SystemToast.create(this.client, SystemToast.Type.NARRATOR_TOGGLE, Text.of("Hello World!"), Text.of("This is a test ;)"))
-            );
+                    ToastNotification.createInfo("Hello World", "Test content");
         }).dimensions(40, 40, 120, 20).build();
 
         ButtonWidget closeButton = ButtonWidget.builder(Text.of("close"), (btn) -> {
