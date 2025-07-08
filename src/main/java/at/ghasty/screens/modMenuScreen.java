@@ -10,8 +10,6 @@ import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.toast.SystemToast;
 import net.minecraft.text.Text;
 
-import static at.ghasty.globals.showFPS;
-
 public class modMenuScreen extends Screen {
     public modMenuScreen(Text title) {
         super(title);
@@ -44,10 +42,17 @@ public class modMenuScreen extends Screen {
         // We'll subtract the font height from the Y position to make the text appear above the button.
         // Subtracting an extra 10 pixels will give the text some padding.
         // textRenderer, text, x, y, color, hasShadow
-        ButtonWidget toggleFPS = ButtonWidget.builder(Text.of("FPS: "+(showFPS ? "on":"off")), (btn) -> {
-            showFPS = !showFPS;
+        ButtonWidget toggleFPS = ButtonWidget.builder(Text.of("FPS: "+(globals.showFPS ? "on":"off")), (btn) -> {
+            globals.showFPS = !globals.showFPS;
         }).dimensions(320, 40, 120, 20).build();
         this.addDrawableChild(toggleFPS);
+
+        ButtonWidget toggleFullBright = ButtonWidget.builder(Text.of("Fullbright: "+(globals.fullbright ? "on":"off")), (btn) -> {
+            globals.fullbright = !globals.fullbright;
+        }).dimensions(320, 80, 120, 20).build();
+        this.addDrawableChild(toggleFullBright);
+
+
         context.drawText(this.textRenderer, "Ghasty Menu", this.width/2, (this.width / 100) * 10 - this.textRenderer.fontHeight - 10, 0xFFFFFFFF, true);
     }
 }

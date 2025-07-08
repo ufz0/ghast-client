@@ -3,7 +3,8 @@
 	"package": "at.ghasty.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"FullbrightMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
