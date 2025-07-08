@@ -28,14 +28,13 @@ public class tickEvents {
                 Ghastclient.LOGGER.info("Opened UI!");
                 if (Ghastclient.client.player != null) {
                     //Ghastclient.client.player.sendMessage(Text.of("Hello World!"), true);
-                    ToastNotification.createInfo("WIP", "Work in progress, nothing is finished ");
+                    ToastNotification.createInfo("WIP", "Ghasty is work in progress, nothing is finished.");
                     Ghastclient.client.setScreen(
                             new modMenuScreen(Text.empty())
                     );
                 }
             }
             if (!shownInfo && Ghastclient.client.isFinishedLoading() && Ghastclient.client.player != null){
-                ToastNotification.createInfo("WIP", "Everything you see here is work in progress");
                 shownInfo = true;
             }
         });
