@@ -3,20 +3,23 @@ package at.ghasty;
 import at.ghasty.keybinds.keybinds;
 import at.ghasty.notifications.ToastNotification;
 import at.ghasty.screens.modMenuScreen;
+import com.ibm.icu.text.CaseMap;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.toast.SystemToast;
-import net.minecraft.client.toast.Toast;
+import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.text.Text;
-import at.ghasty.globals;
-
-import java.util.Optional;
 
 public class tickEvents {
     public static boolean shownInfo = false;
+    public static boolean toastShown = false;
 
     public static void init(){
-
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            if (client.currentScreen instanceof TitleScreen && !toastShown) {
+                at.ghasty.notifications.ToastNotification.createInfo("Startup complete!", "Welcome to Ghasty!");
+                toastShown = true;
+            }
+        });
         ClientTickEvents.START_CLIENT_TICK.register(minecraftClient -> {
 
             if (globals.showFPS && Ghastclient.client.player != null){
