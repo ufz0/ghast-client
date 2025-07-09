@@ -31,8 +31,6 @@ public class tickEvents {
             while (keybinds.openUI.wasPressed()) {
                 Ghastclient.LOGGER.info("Opened UI!");
                 if (Ghastclient.client.player != null) {
-                    //Ghastclient.client.player.sendMessage(Text.of("Hello World!"), true);
-
                     Ghastclient.client.setScreen(
                             new modMenuScreen(Text.empty())
                     );
