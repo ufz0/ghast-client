@@ -1,9 +1,8 @@
 package at.ghasty;
 
 import at.ghasty.keybinds.keybinds;
-import at.ghasty.notifications.ToastNotification;
+import at.ghasty.utils.ToastNotification;
 import at.ghasty.screens.modMenuScreen;
-import com.ibm.icu.text.CaseMap;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.TitleScreen;
@@ -16,7 +15,7 @@ public class tickEvents {
     public static void init(){
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (client.currentScreen instanceof TitleScreen && !toastShown) {
-                at.ghasty.notifications.ToastNotification.createInfo("Startup complete!", "Welcome to Ghasty!");
+                at.ghasty.utils.ToastNotification.createInfo("Startup complete!", "Welcome to Ghasty!");
                 toastShown = true;
             }
         });

@@ -1,4 +1,4 @@
-package at.ghasty.notifications;
+package at.ghasty.utils;
 
 
 import at.ghasty.Ghastclient;

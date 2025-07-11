@@ -2,11 +2,13 @@ package at.ghasty;
 
 import at.ghasty.keybinds.keybinds;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.server.command.CommandManager;
+import net.minecraft.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import at.ghasty.screens.*;
+
 public class Ghastclient implements ModInitializer {
 	public static final String MOD_ID = "ghast-client";
 	public static MinecraftClient client = MinecraftClient.getInstance();
@@ -21,6 +23,8 @@ public class Ghastclient implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+		//Register all commands
+		at.ghasty.utils.commands.registerCommands();
 		// Register keybindings
 		keybinds.init();
 		// Start tick events

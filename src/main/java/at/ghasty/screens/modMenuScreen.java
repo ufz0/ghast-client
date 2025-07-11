@@ -1,13 +1,11 @@
 package at.ghasty.screens;
 
-import at.ghasty.Ghastclient;
 import at.ghasty.globals;
-import at.ghasty.notifications.ToastNotification;
+import at.ghasty.utils.ToastNotification;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
-import net.minecraft.client.toast.SystemToast;
 import net.minecraft.text.Text;
 
 public class modMenuScreen extends Screen {
