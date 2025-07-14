@@ -5,7 +5,7 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
-public class keybinds {
+public class Keybinds {
     public static KeyBinding openModMenu;
     public static final String CATEGORY = "Ghasty";
 
