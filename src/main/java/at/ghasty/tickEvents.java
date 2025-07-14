@@ -28,7 +28,7 @@ public class tickEvents {
             }
 
             while (keybinds.openModMenu.wasPressed()) {
-                Ghastclient.LOGGER.info("Opened UI!");
+                Ghastclient.LOGGER.info("Opened mod-menu!");
                 if (Ghastclient.client.player != null) {
                     Ghastclient.client.setScreen(
                             new modMenuScreen(Text.empty())
