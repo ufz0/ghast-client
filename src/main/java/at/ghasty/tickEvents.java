@@ -27,7 +27,7 @@ public class tickEvents {
                 MinecraftClient.getInstance().player.sendMessage(Text.of(info), true);
             }
 
-            while (keybinds.openUI.wasPressed()) {
+            while (keybinds.openModMenu.wasPressed()) {
                 Ghastclient.LOGGER.info("Opened UI!");
                 if (Ghastclient.client.player != null) {
                     Ghastclient.client.setScreen(
