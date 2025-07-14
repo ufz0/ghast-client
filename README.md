@@ -9,3 +9,4 @@ It also serves as a starting point for other minecraft clients (that must be ope
 - [ ] HUD (for fps etc.)
 - [ ] Capes (later even synched to all players)
 - [ ] Ghasty icon next to playername
+- [ ] Fullbright (toggleable in Mod menu)
