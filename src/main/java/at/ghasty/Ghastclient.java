@@ -1,11 +1,8 @@
 package at.ghasty;
 
-import at.ghasty.keybinds.keybinds;
+import at.ghasty.keybinds.Keybinds;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,7 +23,7 @@ public class Ghastclient implements ModInitializer {
 		//Register all commands
 		at.ghasty.utils.commands.registerCommands();
 		// Register keybindings
-		keybinds.init();
+		Keybinds.init();
 		// Start tick events
 		tickEvents.init();
 

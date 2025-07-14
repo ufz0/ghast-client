@@ -5,13 +5,13 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
-public class keybinds {
-    public static KeyBinding openUI;
+public class Keybinds {
+    public static KeyBinding openModMenu;
     public static final String CATEGORY = "Ghasty";
 
     public static void init() {
-        openUI = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                "key.ghasty.helloWorld",
+        openModMenu = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                "key.ghasty.openMenu",
                 InputUtil.Type.KEYSYM, // Type (KEYSYM = keyboard, MOUSE = mouse button)
                 GLFW.GLFW_KEY_RIGHT_SHIFT,
                 CATEGORY

@@ -1,6 +1,6 @@
 package at.ghasty;
 
-import at.ghasty.keybinds.keybinds;
+import at.ghasty.keybinds.Keybinds;
 import at.ghasty.utils.ToastNotification;
 import at.ghasty.screens.modMenuScreen;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -27,8 +27,8 @@ public class tickEvents {
                 MinecraftClient.getInstance().player.sendMessage(Text.of(info), true);
             }
 
-            while (keybinds.openUI.wasPressed()) {
-                Ghastclient.LOGGER.info("Opened UI!");
+            while (Keybinds.openModMenu.wasPressed()) {
+                Ghastclient.LOGGER.info("Opened mod-menu!");
                 if (Ghastclient.client.player != null) {
                     Ghastclient.client.setScreen(
                             new modMenuScreen(Text.empty())
