@@ -20,8 +20,7 @@ public class Ghastclient implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		//Register all commands
-		at.ghasty.utils.commands.registerCommands();
+
 		// Register keybindings
 		Keybinds.init();
 		// Start tick events
